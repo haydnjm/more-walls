@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Flex, Heading, Text } from "@theme-ui/components";
+import Link from "next/link";
 
 interface DescriptionProps {}
 
@@ -10,7 +11,7 @@ const SmallHeading: React.FC = ({ children }) => (
 );
 const Description: React.FC<DescriptionProps> = () => {
   return (
-    <Box mb={150}>
+    <Box mb={75}>
       <Box my={3}>
         <Text>
           It&apos;s a great time to be a climber in Amsterdam. We have an
@@ -18,6 +19,9 @@ const Description: React.FC<DescriptionProps> = () => {
           climb, meet awesome people and grab a beer 🍻
         </Text>
       </Box>
+      <Link href="/gyms">
+        Are you a gym owner? View information for gyms ➡️
+      </Link>
       <Box my={3}>
         <Text>
           While we&apos;re super lucky to have access to all of this great

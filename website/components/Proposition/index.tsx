@@ -1,4 +1,12 @@
-import { Box, Button, Flex, Heading, Input, Text } from "@theme-ui/components";
+import {
+  Box,
+  Button,
+  Flex,
+  Heading,
+  Input,
+  Link,
+  Text,
+} from "@theme-ui/components";
 import axios from "axios";
 import React, { useCallback, useState } from "react";
 
@@ -26,7 +34,7 @@ const Proposition: React.FC<PropositionProps> = () => {
         What are we going to do about it?
       </Heading>
       <Text as="p" my={3}>
-        More Walls is a service that encourages climbers to climb. By{" "}
+        MoreWalls is a service that encourages climbers to climb. By{" "}
         <b>climbing more frequently</b> and at a <b>variety of locations</b>,
         climbers can get entry at discounted prices.
       </Text>
@@ -36,7 +44,10 @@ const Proposition: React.FC<PropositionProps> = () => {
         for cheaper and gyms keep their walls full - so everybody wins!
       </Text>
       <Box>
-        <Button onClick={() => setShowInput(!showInput)}>
+        <Button
+          onClick={() => setShowInput(!showInput)}
+          sx={{ cursor: "pointer" }}
+        >
           That sounds amazing - keep me updated please!
         </Button>
       </Box>
@@ -73,13 +84,43 @@ const Proposition: React.FC<PropositionProps> = () => {
                   />
                 </Box>
                 <Box p={1}>
-                  <Button type="submit">Submit</Button>
+                  <Button type="submit" sx={{ cursor: "pointer" }}>
+                    Submit
+                  </Button>
                 </Box>
               </Flex>
             </form>
           )}
         </Box>
       )}
+      <Flex
+        sx={{ flexDirection: "column", width: "100%", alignItems: "center" }}
+      >
+        <Flex sx={{ alignItems: "center", width: "100%", my: 4 }}>
+          <Box
+            sx={{
+              m: 1,
+              flex: "1 1 0",
+              border: "1px solid",
+              borderColor: "primary",
+              height: "1px",
+            }}
+          ></Box>
+          <Box> or if you are a gym owner:</Box>
+          <Box
+            sx={{
+              m: 1,
+              flex: "1 1 0",
+              border: "1px solid",
+              borderColor: "primary",
+              height: "1px",
+            }}
+          ></Box>
+        </Flex>
+        <Link href="/gyms">
+          <Button sx={{ cursor: "pointer" }}>Information for gyms</Button>
+        </Link>
+      </Flex>
     </Box>
   );
 };

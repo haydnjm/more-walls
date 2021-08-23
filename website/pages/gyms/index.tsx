@@ -46,7 +46,7 @@ const Gyms: NextPage<GymsProps> = () => {
       <Box my={6}>
         <Heading mb={6}>What&apos;s the point?</Heading>
         <Text>
-          The first goal of More Walls is to encourage climbers to climb more
+          The first goal of MoreWalls is to encourage climbers to climb more
           often. By making gyms more accessible and rewarding climbers for
           climbing more frequently, we want to take climbing and bouldering to
           the next level. This means fuller gyms and a bigger customer base for
@@ -84,9 +84,9 @@ const Gyms: NextPage<GymsProps> = () => {
         </Box>
       </Box>
 
-      <Heading>
-        For more information on how you can get involved in the project then
-        please fill the following form in:
+      <Heading mb={2} as="h2">
+        For more details about the project and information on how you can get
+        involved then please let us know:
       </Heading>
 
       {status === "error" ? (
@@ -119,7 +119,11 @@ const Gyms: NextPage<GymsProps> = () => {
           <label>Telephone</label>
           <Input {...register("telephone")} />
           <Text sx={{ fontSize: 2 }}>* = required</Text>
-          <Button my={3} type="submit" sx={{ width: "100%" }}>
+          <Button
+            my={3}
+            type="submit"
+            sx={{ width: "100%", cursor: "pointer" }}
+          >
             Submit
           </Button>
         </form>

@@ -87,7 +87,7 @@ export const theme = {
     text: "#161718",
     secondaryText: "#2C2E30",
     tertiaryText: "#44474A",
-    background: "#F2F5F7",
+    background: "#eee6fc",
     primary: "#119293",
     secondary: "#D4E8FC",
     accent: "#44C881",
@@ -106,6 +106,9 @@ export const theme = {
       fontFamily: "body",
       fontWeight: "body",
       lineHeight: "body",
+    },
+    button: {
+      cursor: "pointer",
     },
   },
 };
