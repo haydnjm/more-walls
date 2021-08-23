@@ -1,10 +1,34 @@
-import { Box, Flex, Heading, Text } from "@theme-ui/components";
+import { Box, Button, Flex, Heading, Input, Text } from "@theme-ui/components";
+import axios from "axios";
 import { NextPage } from "next";
 import Link from "next/link";
-
+import { useCallback, useState } from "react";
+import { useForm, SubmitHandler } from "react-hook-form";
 type GymsProps = { error?: string };
 
+type Inputs = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  telephone: string;
+  gymName: string;
+};
+
 const Gyms: NextPage<GymsProps> = () => {
+  const { register, handleSubmit } = useForm<Inputs>();
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
+    axios
+      .post("/api/add-email-member-gym", data)
+      .then(() => setStatus("success"))
+      .catch((e) => {
+        setStatus("error");
+        console.error(e);
+      });
+  };
+
+  const [status, setStatus] =
+    useState<"unsubmitted" | "error" | "success">("unsubmitted");
+
   return (
     <>
       <Link href="/">Back to home</Link>
@@ -59,6 +83,47 @@ const Gyms: NextPage<GymsProps> = () => {
           climbing more often.
         </Box>
       </Box>
+
+      <Heading>
+        For more information on how you can get involved in the project then
+        please fill the following form in:
+      </Heading>
+
+      {status === "error" ? (
+        <Box>
+          <Heading as="h4">Something went wrong :(</Heading>
+        </Box>
+      ) : status === "success" ? (
+        <Box>
+          <Heading as="h4" color="accent">
+            Great! We&apos;ll send you an email to let you know some more
+            details!
+          </Heading>
+        </Box>
+      ) : (
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <Flex mx={-1}>
+            <Box sx={{ flex: "1 1 0" }} mx={1}>
+              <label>First name*</label>
+              <Input {...register("firstName", { required: true })} />
+            </Box>
+            <Box sx={{ flex: "1 1 0" }} mx={1}>
+              <label>Last name*</label>
+              <Input {...register("lastName", { required: true })} />
+            </Box>
+          </Flex>
+          <label>Gym name*</label>
+          <Input {...register("gymName", { required: true })} />
+          <label>Email*</label>
+          <Input type="email" {...register("email", { required: true })} />
+          <label>Telephone</label>
+          <Input {...register("telephone")} />
+          <Text sx={{ fontSize: 2 }}>* = required</Text>
+          <Button my={3} type="submit" sx={{ width: "100%" }}>
+            Submit
+          </Button>
+        </form>
+      )}
     </>
   );
 };

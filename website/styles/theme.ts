@@ -81,7 +81,7 @@ export const theme = {
     body: 1.5,
     heading: 1.125,
   },
-  fontSizes: ["5px"],
+  fontSizes: ["12px", "14px", "16px", "20px", "24px", "32px", "40px", "48px"],
   radii: ["0", "2px", "4px"],
   colors: {
     text: "#161718",

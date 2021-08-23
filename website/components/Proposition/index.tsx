@@ -1,4 +1,5 @@
 import { Box, Button, Flex, Heading, Input, Text } from "@theme-ui/components";
+import axios from "axios";
 import React, { useCallback, useState } from "react";
 
 interface PropositionProps {}
@@ -6,11 +7,21 @@ interface PropositionProps {}
 const Proposition: React.FC<PropositionProps> = () => {
   const [showInput, setShowInput] = useState(false);
   const [email, setEmail] = useState("");
+  const [status, setStatus] =
+    useState<"unsubmitted" | "error" | "success">("unsubmitted");
 
-  const submitForm = useCallback(() => {}, [email]);
+  const submitForm = useCallback(() => {
+    axios
+      .post("/api/add-email-member-climber", { email })
+      .then(() => setStatus("success"))
+      .catch((e) => {
+        setStatus("error");
+        console.error(e);
+      });
+  }, [email]);
 
   return (
-    <Box sx={{ mb: 150 }}>
+    <Box sx={{ mb: 100 }}>
       <Heading as="h1" mb={3}>
         What are we going to do about it?
       </Heading>
@@ -20,7 +31,7 @@ const Proposition: React.FC<PropositionProps> = () => {
         climbers can get entry at discounted prices.
       </Text>
       <Text as="p" my={3}>
-        By getting more people into the gym, nore frequently, we can lower the
+        By getting more people into the gym more frequently, we can lower the
         entry costs (and have lots more fun climbing 😉). Climbers get to climb
         for cheaper and gyms keep their walls full - so everybody wins!
       </Text>
@@ -35,25 +46,38 @@ const Proposition: React.FC<PropositionProps> = () => {
             Enter your email address here to recieve an update in the future
             when we reach the next stage of the project! (No spam, promise 👍)
           </Box>
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              submitForm();
-            }}
-          >
-            <Flex m={-1}>
-              <Box sx={{ flex: "1 1 0" }} p={1}>
-                <Input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </Box>
-              <Box p={1}>
-                <Button type="submit">Submit</Button>
-              </Box>
-            </Flex>
-          </form>
+          {status === "error" ? (
+            <Box>
+              <Heading as="h4">Something went wrong :(</Heading>
+            </Box>
+          ) : status === "success" ? (
+            <Box>
+              <Heading as="h4" color="accent">
+                Woo! We&apos;ll send you a message when we&apos;ve made some
+                progress!
+              </Heading>
+            </Box>
+          ) : (
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                submitForm();
+              }}
+            >
+              <Flex m={-1}>
+                <Box sx={{ flex: "1 1 0" }} p={1}>
+                  <Input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                </Box>
+                <Box p={1}>
+                  <Button type="submit">Submit</Button>
+                </Box>
+              </Flex>
+            </form>
+          )}
         </Box>
       )}
     </Box>
