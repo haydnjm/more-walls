@@ -18,7 +18,7 @@ function App({ Component, pageProps }: AppProps) {
           sx={{
             width: ["100%", "600px"],
             m: "auto",
-            p: [1, 0],
+            p: [3, 3],
           }}
         >
           <Component {...pageProps} />
