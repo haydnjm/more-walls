@@ -19,9 +19,7 @@ const Description: React.FC<DescriptionProps> = () => {
           climb, meet awesome people and grab a beer 🍻
         </Text>
       </Box>
-      <Link href="/gyms">
-        Are you a gym owner? View information for gyms ➡️
-      </Link>
+      <Link href="/gyms">Are you a gym owner? View information for gyms</Link>
       <Box my={3}>
         <Text>
           While we&apos;re super lucky to have access to all of this great
