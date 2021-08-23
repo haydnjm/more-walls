@@ -14,7 +14,10 @@ const Hero: React.FC<HeroProps> = () => {
       }}
     >
       <Box>
-        <Heading as="h1" sx={{ fontSize: 100, fontWeight: 300, m: 20 }}>
+        <Heading
+          as="h1"
+          sx={{ fontSize: [60, 70, 100], fontWeight: 300, my: 20 }}
+        >
           MoreWalls
         </Heading>
         <Heading as="h1" sx={{ fontSize: 20 }}>
