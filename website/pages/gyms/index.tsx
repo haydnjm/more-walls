@@ -2,7 +2,7 @@ import { Box, Button, Flex, Heading, Input, Text } from "@theme-ui/components";
 import axios from "axios";
 import { NextPage } from "next";
 import Link from "next/link";
-import { useCallback, useState } from "react";
+import { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 type GymsProps = { error?: string };
 

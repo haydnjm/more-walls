@@ -1,10 +1,8 @@
-import Link from "next/link";
-import { Button, Flex } from "@theme-ui/components";
 import Head from "next/head";
-import Description from "../components/Description";
-import Hero from "../components/hero";
-import Proposition from "../components/Proposition";
-import GymLink from "../components/GymLink";
+import Description from "./components/Description";
+import Hero from "./components/hero";
+import Proposition from "./components/Proposition";
+import GymLink from "./components/GymLink";
 
 export default function Home() {
   return (
