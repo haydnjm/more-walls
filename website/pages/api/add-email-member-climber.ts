@@ -8,8 +8,6 @@ mailchimp.setConfig({
 });
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
-  console.log(req.body);
-
   try {
     const response = await mailchimp.lists.addListMember(
       process.env.MAILCHIMP_AUDIENCE,
@@ -19,7 +17,6 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         tags: ["climber"],
       }
     );
-    console.log(response);
     res.status(200).json({ tags: ["climber"] });
   } catch (error) {
     console.log(error);
