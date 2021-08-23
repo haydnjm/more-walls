@@ -1,8 +1,5 @@
 {
-  "name": "more-walls",
-  "version": "1.0.0",
-  "main": "index.js",
-  "repository": "https://github.com/haydnjm/more-walls.git",
-  "author": "Haydn <haydn@energiebespaarders.nl>",
-  "license": "MIT"
+  "dependencies": {
+    "@carbonplan/theme": "^6.0.1"
+  }
 }
