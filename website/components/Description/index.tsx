@@ -1,12 +1,9 @@
 import React from "react";
-import { Box, Flex, Heading, Text, Button } from "theme-ui";
-import Link from "next/link";
+import { Box } from "theme-ui";
 
-interface DescriptionProps {
-  setShowForm: (p: boolean) => void;
-}
+interface DescriptionProps {}
 
-const Description: React.FC<DescriptionProps> = ({ setShowForm }) => {
+const Description: React.FC<DescriptionProps> = () => {
   return (
     <Box>
       <Box mb={75}>
@@ -43,17 +40,11 @@ const Description: React.FC<DescriptionProps> = ({ setShowForm }) => {
         <p>
           In the future we want to add other related activies that climbers love
           (e.g. events, maybe some yoga or climbing-oriented fitness classes)
-          but for now, we want to focus on building a network of gyms and
-          climbing halls so that climbers have the freedom to mix it up, climb
-          wherever they find themselves, and get to know your gym.
+          and lots of other fun stuff, but for now, we want to focus on building
+          a network of gyms and climbing halls so that climbers have the freedom
+          to mix it up, climb wherever they find themselves, and get to know
+          your gym.
         </p>
-        <Button
-          variant="primary"
-          sx={{ margin: "auto", display: "block" }}
-          onClick={() => setShowForm(true)}
-        >
-          Amazing, sign me up right now!
-        </Button>
       </Box>
     </Box>
   );

@@ -89,7 +89,7 @@ export const theme = {
     tertiaryText: "#44474A",
     background: "#eee6fc",
     primary: "#ffe119",
-    secondary: "#D4E8FC",
+    secondary: "#4bd1c6",
     accent: "#44C881",
     muted: "#FAFBFC",
     border: "#E9ECF0",

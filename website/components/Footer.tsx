@@ -5,7 +5,7 @@ interface FooterProps {}
 
 const Footer: React.FC<FooterProps> = () => {
   return (
-    <Flex p={50} backgroundColor="accent" mt={50} color="lights.five">
+    <Flex p={50} backgroundColor="secondary" mt={50} color="lights.five">
       <Box sx={{ flex: "1 1 auto" }}>
         <p>more.walls.nl@gmail.com</p>
         <p>

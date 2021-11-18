@@ -5,7 +5,6 @@ import Hero from "../components/Hero";
 import GymSignupForm from "../components/GymSignupForm";
 
 export default function Home() {
-  const [showForm, setShowForm] = useState(false);
   return (
     <div>
       <Head>
@@ -16,11 +15,11 @@ export default function Home() {
 
       <main>
         <Hero />
-        <Description setShowForm={setShowForm} />
+        <Description />
         {/*
         <Proposition /> 
         */}
-        {showForm && <GymSignupForm setShowForm={setShowForm} />}
+        <GymSignupForm />
       </main>
     </div>
   );
