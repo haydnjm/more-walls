@@ -102,16 +102,6 @@ const Gyms: NextPage<GymsProps> = () => {
         </Box>
       ) : (
         <form onSubmit={handleSubmit(onSubmit)}>
-          <Flex mx={-1}>
-            <Box sx={{ flex: "1 1 0" }} mx={1}>
-              <label>First name*</label>
-              <Input {...register("firstName", { required: true })} />
-            </Box>
-            <Box sx={{ flex: "1 1 0" }} mx={1}>
-              <label>Last name*</label>
-              <Input {...register("lastName", { required: true })} />
-            </Box>
-          </Flex>
           <label>Gym name*</label>
           <Input {...register("gymName", { required: true })} />
           <label>Email*</label>

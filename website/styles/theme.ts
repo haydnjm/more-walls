@@ -88,7 +88,7 @@ export const theme = {
     secondaryText: "#2C2E30",
     tertiaryText: "#44474A",
     background: "#eee6fc",
-    primary: "#119293",
+    primary: "#ffe119",
     secondary: "#D4E8FC",
     accent: "#44C881",
     muted: "#FAFBFC",
@@ -106,9 +106,24 @@ export const theme = {
       fontFamily: "body",
       fontWeight: "body",
       lineHeight: "body",
+      fontSize: "1.2rem",
     },
     button: {
       cursor: "pointer",
+    },
+  },
+  buttons: {
+    primary: {
+      color: "text",
+      bg: "primary",
+      cursor: "pointer",
+      boxShadow: "0px 3px 3px -2px rgba(100,100,100, .5)",
+      fontSize: ".9rem",
+      padding: "15px",
+    },
+    secondary: {
+      color: "background",
+      bg: "secondary",
     },
   },
 };

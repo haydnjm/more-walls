@@ -9,7 +9,7 @@ function App({ Component, pageProps }: AppProps) {
       <Box
         sx={{
           backgroundImage: 'url("/wall.svg")',
-          backgroundPosition: "center",
+          backgroundPosition: "top",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
         }}

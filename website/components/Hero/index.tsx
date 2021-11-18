@@ -23,9 +23,6 @@ const Hero: React.FC<HeroProps> = () => {
         <Heading as="h1" sx={{ fontSize: 20 }}>
           The flexible way to climb.
         </Heading>
-        <Heading as="h3" sx={{ fontSize: 15 }}>
-          (coming soon)
-        </Heading>
       </Box>
     </Flex>
   );
