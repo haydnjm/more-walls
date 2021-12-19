@@ -46,18 +46,17 @@ const Gyms: NextPage<GymsProps> = () => {
         {!showForm && (
           <>
             <p>
-              If you and your gym are interested in getting involved, if
-              you&apos;d like to hear more about the project, or you just want
-              to give your thoughts, then you can reach us at{" "}
-              <b>more.walls.nl@gmail.com</b>, or hit the button 👇 to leave your
-              email and we&apos;ll keep you updated!
+              If you don&apos;t want your gym to miss out then hit the button 👇
+              to leave your email. If you have any questions you can also reach
+              us at&nbsp;
+              <b>more.walls.nl@gmail.com</b>.
             </p>
             <Button
               variant="primary"
               sx={{ margin: "auto", display: "block" }}
               onClick={() => setShowForm(true)}
             >
-              Amazing, sign me up right now!
+              Get involved
             </Button>
           </>
         )}
